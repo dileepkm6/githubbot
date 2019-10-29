@@ -27,6 +27,11 @@ export class AppComponent implements OnInit {
     {
       this.router.navigateByUrl('/get-repo');
     }
+    else
+    {
+      this.router.navigateByUrl('/chat');
+    }
+
       });
   }
   title = 'githubbot';
@@ -36,10 +41,6 @@ export class AppComponent implements OnInit {
     this.chatService.sendRequest(this.statement);
     console.log(this.response);
     
-    // else
-    // {
-    //   this.router.navigateByUrl('/home');
-    // }
-
+    
   }
 }

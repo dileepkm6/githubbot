@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {GithubservicesService} from '../githubservices.service';
+import {
+  MatSnackBar,
+  MatButtonModule
+} from '@angular/material';
 
 @Component({
   selector: 'app-create-repo',
@@ -8,7 +12,7 @@ import {GithubservicesService} from '../githubservices.service';
 })
 export class CreateRepoComponent implements OnInit {
 
-  constructor(private _gitSer:GithubservicesService) { }
+  constructor(private _gitSer:GithubservicesService,public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -16,7 +20,10 @@ export class CreateRepoComponent implements OnInit {
   {
     this._gitSer.createRepo(repoName,description).subscribe(data=>
       {
+        this.snackBar.open(repoName+" successfully created","ok",{duration: 2000});
         console.log(data);
       });
+
+    
   }
 }

@@ -10,6 +10,9 @@ import { DeleteRepoComponent } from './delete-repo/delete-repo.component';
 import {GithubservicesService} from './githubservices.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ChatService} from './chat.service';
+import {MatSnackBarModule,MatButtonModule } from '@angular/material';
+import { ChatComponent } from './chat/chat.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,16 @@ import {ChatService} from './chat.service';
     CreateRepoComponent,
     GetRepoComponent,
     DeleteRepoComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [GithubservicesService,ChatService],
   bootstrap: [AppComponent]
