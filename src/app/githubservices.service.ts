@@ -8,6 +8,7 @@ export class GithubservicesService {
 
   private _createUrl: string = 'https://api.github.com/user/repos?access_token=88d07c32eadfe766d98a37b4eeed7486e2e31fe6';
   private _delUrl:string = 'https://api.github.com/repos/dileepkm666/';
+  private _pullUrl:string = 'https://api.github.com/repos/owner/repo/pulls?access_token=88d07c32eadfe766d98a37b4eeed7486e2e31fe6';
   private _token:string = '?access_token=88d07c32eadfe766d98a37b4eeed7486e2e31fe6';
 
   constructor(private _http:HttpClient) { }
@@ -34,8 +35,16 @@ export class GithubservicesService {
   {
      return this._http.delete(this._delUrl+repoName+this._token);
   }
-  pullRepo(repoName:any)
+  saveRepo(id:any,repoName:string,discription:string)
   {
-
+      return this._http.post('http://localhost:8080/api/v1/save',{
+        "id":id,
+        "repoName":repoName,
+        "description": discription
+      });
+  }
+  deleteRepoFromDataBase(repoId:any)
+  {
+    return this._http.post('http://localhost:8080/api/v1/delete',{"id":repoId});
   }
 }

@@ -17,11 +17,31 @@ export class GetRepoComponent implements OnInit {
         console.log(data);
       })
   }
- deleteRepo(repoName:string)
+
+ deleteRepo(repoName:string,id:any)
  {
    this._gservice.deleteRepo(repoName).subscribe(data =>{
      console.log(data);
    })
+   this._gservice.deleteRepoFromDataBase(id).subscribe(data =>
+    {console.log(data)});
    document.getElementById(repoName).style.display="none";
+ }
+ counts:any=0;
+ saveFavouriteRepo(id:any,repoName:string,discription:string)
+ {
+   this.counts++;
+    if(this.counts%2!=0)
+    {
+      document.getElementById(repoName+id).style.color="#002700";
+      this._gservice.saveRepo(id,repoName,discription).subscribe(data =>
+        {console.log(data)});
+    }
+    if(this.counts%2==0)
+    {
+      document.getElementById(repoName+id).style.color="white";
+      this._gservice.deleteRepoFromDataBase(id).subscribe(data =>
+        {console.log(data)});
+    }
  }
 }

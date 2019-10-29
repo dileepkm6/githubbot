@@ -13,6 +13,8 @@ import {ChatService} from './chat.service';
 import {MatSnackBarModule,MatButtonModule } from '@angular/material';
 import { ChatComponent } from './chat/chat.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PullRepoComponent } from './pull-repo/pull-repo.component';
+import { FavRepoComponent } from './fav-repo/fav-repo.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     GetRepoComponent,
     DeleteRepoComponent,
     ChatComponent,
+    PullRepoComponent,
+    FavRepoComponent,
   ],
   imports: [
     BrowserModule,

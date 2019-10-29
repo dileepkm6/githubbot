@@ -9,10 +9,13 @@
       </thead> -->
       <tbody *ngFor="let repo of repoList; index as i">
         <tr id="{{repo.name}}">
-          <th scope="row">{{i+1}}</th>
+          <th scope="row">{{repo.id}}</th>
           <td>{{repo.name}}</td>
-          <td>dileep</td>
-          <td><button class="btn" (click)="deleteRepo(repo.name)"><i class="fa fa-trash"></i></button></td>
+          <td>{{repo.description}}</td>
+          <td><button class="btn" (click)="deleteRepo(repo.name,repo.id)"><i class="fa fa-trash"></i></button></td>
+          <td><button type="button" (click)="saveFavouriteRepo(repo.id,repo.name,repo.description)" class="btn btn-default btn-sm">
+              <span id="{{repo.name+repo.id}}" class="glyphicon glyphicon-star"></span>
+            </button></td>
         </tr>
       </tbody>
     </table>
