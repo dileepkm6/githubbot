@@ -1,19 +1,19 @@
-
-<button (click)="getRepo()">ShowAllRepo</button>
-<table class="table table-striped table-dark">
-        <!-- <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">RepoName</th>
-            <th scope="col">CreatedAt</th>
-          </tr>
-        </thead> -->
-        <tbody *ngFor="let repo of repoList; index as i">
-          <tr id="{{repo.name}}">
-            <th scope="row">{{i+1}}</th>
-            <td>{{repo.name}}</td>
-            <td>dileep</td>
-            <td><button class="btn" (click)="deleteRepo(repo.name)"><i class="fa fa-trash"></i></button></td>
-          </tr>
-        </tbody>
-      </table>
+<div class="box">
+  <table class="table table-striped table-dark">
+      <!-- <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">RepoName</th>
+          <th scope="col">CreatedAt</th>
+        </tr>
+      </thead> -->
+      <tbody *ngFor="let repo of repoList; index as i">
+        <tr id="{{repo.name}}">
+          <th scope="row">{{i+1}}</th>
+          <td>{{repo.name}}</td>
+          <td>dileep</td>
+          <td><button class="btn" (click)="deleteRepo(repo.name)"><i class="fa fa-trash"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>

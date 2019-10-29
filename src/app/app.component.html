@@ -1,13 +1,15 @@
-<!-- <div class="container" style="margin:20% 40% 20% 30%"> -->
-  
 
 <div class="container">
-  <form class="form-inline">
-    <div class="form-group mx-sm-3 mb-2">
-      <!-- <label for="statement" class="sr-only">Password</label> -->
-      <input type="text" name="statements" [(ngModel)]="statement" class="form-control" id="statement" (keyup.enter)="sendRequest()">
-    </div>
-    <button type="button" (click)="sendRequest()" class="btn btn-primary mb-2">Search</button>
-  </form>
-  <router-outlet></router-outlet>
+  <h1>GitHub Bot</h1>
+  <div class="box">
+      <router-outlet></router-outlet>
+  </div>
+  <div valign="bottom">
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" name="statements" [(ngModel)]="statement" class="form-control" id="statement" (keyup.enter)="sendRequest()">
+        </div>
+        <button type="button" (click)="sendRequest()" class="btn btn-primary mb-2">Search</button>
+      </form>
+  </div>
 </div>

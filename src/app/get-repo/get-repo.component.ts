@@ -11,15 +11,12 @@ export class GetRepoComponent implements OnInit {
   constructor(private _gservice:GithubservicesService) { }
   public repoList:any;
   ngOnInit() {
+    this._gservice.getAllRepo().subscribe(data=>
+      {
+        this.repoList=data;
+        console.log(data);
+      })
   }
- getRepo()
- {
-  this._gservice.getAllRepo().subscribe(data=>
-    {
-      this.repoList=data;
-      console.log(data);
-    })
- }
  deleteRepo(repoName:string)
  {
    this._gservice.deleteRepo(repoName).subscribe(data =>{

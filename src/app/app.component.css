@@ -1,4 +1,15 @@
 .container
 {
-    margin:50%;
+    border:1px solid black;
+    margin:5%;
+    padding-left: 25%;
+}
+.box
+{
+    display: flex;
+    align-items: center;
+    margin:50px;
+    width:400px;
+    height:auto;
+    padding: 10px;
 }
