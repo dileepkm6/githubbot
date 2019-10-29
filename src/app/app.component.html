@@ -1,14 +1,13 @@
-<div class="container" style="margin:20% 40% 20% 30%">
+<!-- <div class="container" style="margin:20% 40% 20% 30%"> -->
+  
+
+<div class="container">
   <form class="form-inline">
     <div class="form-group mx-sm-3 mb-2">
       <!-- <label for="statement" class="sr-only">Password</label> -->
-      <input type="text" name="statements" [(ngModel)]="statement" class="form-control" id="statement">
+      <input type="text" name="statements" [(ngModel)]="statement" class="form-control" id="statement" (keyup.enter)="sendRequest()">
     </div>
     <button type="button" (click)="sendRequest()" class="btn btn-primary mb-2">Search</button>
   </form>
+  <router-outlet></router-outlet>
 </div>
-<!-- <app-get-repo></app-get-repo>
-<app-create-repo></app-create-repo>
-<app-delete-repo></app-delete-repo> -->
-<app-chatbot></app-chatbot>
-<router-outlet></router-outlet>

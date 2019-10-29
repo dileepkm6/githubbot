@@ -9,7 +9,6 @@ import { GetRepoComponent } from './get-repo/get-repo.component';
 import { DeleteRepoComponent } from './delete-repo/delete-repo.component';
 import {GithubservicesService} from './githubservices.service';
 import {HttpClientModule} from '@angular/common/http';
-import { ChatbotComponent } from './chatbot/chatbot.component';
 import {ChatService} from './chat.service';
 
 @NgModule({
@@ -18,7 +17,6 @@ import {ChatService} from './chat.service';
     CreateRepoComponent,
     GetRepoComponent,
     DeleteRepoComponent,
-    ChatbotComponent
   ],
   imports: [
     BrowserModule,

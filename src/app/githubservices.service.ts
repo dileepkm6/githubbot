@@ -13,7 +13,7 @@ export class GithubservicesService {
   constructor(private _http:HttpClient) { }
   public getAllRepo()
   {
-    return this._http.get("https://api.github.com/users/dileepkm666/repos?access_token=88d07c32eadfe766d98a37b4eeed7486e2e31fe6");
+    return this._http.get("https://api.github.com/user/repos?access_token=88d07c32eadfe766d98a37b4eeed7486e2e31fe6");
   }
   public createRepo(repoName:string,description:string)
   {
