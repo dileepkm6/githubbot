@@ -2,3 +2,15 @@
 {
     border:1px solid lightblue;
 }
+h3
+{
+    text-align: center;
+}
+.wrapper
+{
+    text-align: center;
+}
+form
+{
+    margin:40px;  
+}

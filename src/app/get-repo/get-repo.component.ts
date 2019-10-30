@@ -8,14 +8,28 @@ import {GithubservicesService} from '../githubservices.service';
 })
 export class GetRepoComponent implements OnInit {
 
-  constructor(private _gservice:GithubservicesService) { }
+  constructor(private _gservice:GithubservicesService) {console.log("cons") }
   public repoList:any;
+  favRepoList: any;
+  index:any=0;
   ngOnInit() {
+    console.log("init");
     this._gservice.getAllRepo().subscribe(data=>
       {
         this.repoList=data;
-        console.log(data);
+        //console.log(data);
       })
+      this._gservice.getFavRepo().subscribe((data :any) =>
+        {
+          //this.favRepoList=data;
+          for(let d of data)
+          {
+            console.log(d.id);
+            document.getElementById(d.repoName+d.id).style.color="rgb(0,0,0)";
+          }
+          this.index++;
+        })
+        
   }
 
  deleteRepo(repoName:string,id:any)
@@ -27,21 +41,25 @@ export class GetRepoComponent implements OnInit {
     {console.log(data)});
    document.getElementById(repoName).style.display="none";
  }
- counts:any=0;
+
  saveFavouriteRepo(id:any,repoName:string,discription:string)
  {
-   this.counts++;
-    if(this.counts%2!=0)
+  
+  var button = document.getElementById(repoName+id);
+  var style = getComputedStyle(button);
+    if(style['color']=="rgb(0, 0, 0)") //if green fav then make it white
     {
-      document.getElementById(repoName+id).style.color="#002700";
-      this._gservice.saveRepo(id,repoName,discription).subscribe(data =>
-        {console.log(data)});
-    }
-    if(this.counts%2==0)
-    {
-      document.getElementById(repoName+id).style.color="white";
+      document.getElementById(repoName+id).style.color="rgb(255,255,255)";
       this._gservice.deleteRepoFromDataBase(id).subscribe(data =>
         {console.log(data)});
     }
+    else if(style['color']=="rgb(255, 255, 255)") //make favourite
+    {
+      document.getElementById(repoName+id).style.color="rgb(0,0,0)";
+      this._gservice.saveRepo(id,repoName,discription).subscribe(data =>
+        {console.log(data)});
+      
+    }
+
  }
 }

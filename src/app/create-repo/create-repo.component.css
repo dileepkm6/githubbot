@@ -1,4 +1,17 @@
 .box
 {
     border:1px solid lightblue;
+    border-radius: 10px;
+}
+h3
+{
+    text-align: center;
+}
+.wrapper
+{
+    text-align: center;
+}
+form
+{
+    margin:40px;  
 }

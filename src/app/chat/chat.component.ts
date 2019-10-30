@@ -9,15 +9,19 @@ import {Router} from '@angular/router';
 })
 export class ChatComponent implements OnInit {
 
-  constructor(private chat:ChatService,private router:Router) { }
   response:string;
-  ngOnInit() 
-  {
+  constructor(private chat:ChatService,private router:Router) 
+  { 
     this.chat.getResponse().subscribe(data =>
       {
         this.response=data.content;
         console.log(this.response);
       })
+  }
+  
+  ngOnInit() 
+  {
+    
   }
 
 }

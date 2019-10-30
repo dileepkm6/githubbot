@@ -16,6 +16,7 @@ export class DeleteRepoComponent implements OnInit {
 
   ngOnInit() {
   }
+
  deleteRepo(repoName:string)
  {
     this._githubService.deleteRepo(repoName).subscribe(data =>
@@ -23,5 +24,6 @@ export class DeleteRepoComponent implements OnInit {
         this.snachBar.open(repoName+" successfully deleted","ok",{duration:2000});
         console.log(data);
       })
+      // this._githubService.deleteRepoFromDataBase(repoId);
  }
 }

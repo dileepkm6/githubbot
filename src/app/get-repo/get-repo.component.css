@@ -6,3 +6,11 @@
     font-size: 16px;
     cursor: pointer;
   }
+  h3
+  {
+    text-align: center;
+  }
+  .box
+  {
+    margin:20px;
+  }

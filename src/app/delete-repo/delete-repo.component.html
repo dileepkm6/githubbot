@@ -1,10 +1,11 @@
 <div class="box">
     <form>
-        <h1>Delete Repository</h1>
+        <h3>Delete Repository</h3>
         <div class="form-group">
-          <label for="repoName">RepoName</label>
           <input #repoName type="text" class="form-control" id="repoName" placeholder="Enter RepoName">
         </div>
-        <button type="button" (click)="deleteRepo(repoName.value)" class="btn btn-primary">Delete</button>
+        <div class="wrapper">
+          <button type="button" (click)="deleteRepo(repoName.value)" class="btn btn-danger">Delete</button>
+        </div>
       </form>
 </div>

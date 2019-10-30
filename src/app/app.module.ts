@@ -15,6 +15,7 @@ import { ChatComponent } from './chat/chat.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PullRepoComponent } from './pull-repo/pull-repo.component';
 import { FavRepoComponent } from './fav-repo/fav-repo.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FavRepoComponent } from './fav-repo/fav-repo.component';
     FormsModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CommonModule
   ],
   providers: [GithubservicesService,ChatService],
   bootstrap: [AppComponent]
