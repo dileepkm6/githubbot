@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-//4cce843759c715cf3f09eb7f322461422cb8ea9f
+//0f48d668f0aa02ee70019a6dcf031f83d0bbfdfe
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class GithubservicesService {
   private _createUrl: string = 'https://api.github.com/user/repos';
   private _delUrl:string = 'https://api.github.com/repos/dileepkm666/';
   private _pullUrl:string = 'https://api.github.com/repos/owner/repo/pulls?';
-  private _token:string = '?access_token=4cce843759c715cf3f09eb7f322461422cb8ea9f';
+  private _token:string = '?access_token=0f48d668f0aa02ee70019a6dcf031f83d0bbfdfe';
   private _getRepo = 'https://api.github.com/user/repos';
 
   constructor(private _http:HttpClient) { }
@@ -69,9 +69,9 @@ export class GithubservicesService {
         "description": discription
       });
   }
-  deleteRepoFromDataBase(repoId:any)
+  deleteRepoFromDataBase(repoId:Number)
   {
-    return this._http.post('http://localhost:8080/api/v1/delete',{"id":repoId});
+    return this._http.delete('http://localhost:8080/api/v1/delete/'+repoId);
   }
   getFavRepo()
   {

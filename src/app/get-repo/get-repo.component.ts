@@ -8,17 +8,17 @@ import {GithubservicesService} from '../githubservices.service';
 })
 export class GetRepoComponent implements OnInit {
 
-  constructor(private _gservice:GithubservicesService) {console.log("cons") }
-  public repoList:any;
-  favRepoList: any;
-  index:any=0;
-  ngOnInit() {
-    console.log("init");
+  constructor(private _gservice:GithubservicesService) {
     this._gservice.getAllRepo().subscribe(data=>
       {
         this.repoList=data;
         //console.log(data);
       })
+   }
+  public repoList:any;
+  favRepoList: any;
+  index:any=0;
+  ngOnInit() {
       this._gservice.getFavRepo().subscribe((data :any) =>
         {
           //this.favRepoList=data;
@@ -53,7 +53,7 @@ export class GetRepoComponent implements OnInit {
       this._gservice.deleteRepoFromDataBase(id).subscribe(data =>
         {console.log(data)});
     }
-    else if(style['color']=="rgb(255, 255, 255)") //make favourite
+    else //if(style['color']=="rgb(255, 255, 255)") //make favourite
     {
       document.getElementById(repoName+id).style.color="rgb(0,0,0)";
       this._gservice.saveRepo(id,repoName,discription).subscribe(data =>

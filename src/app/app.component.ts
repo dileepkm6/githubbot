@@ -12,10 +12,10 @@ export class AppComponent implements OnInit {
   constructor(private router: Router,private chatService:ChatService){}
   response:string;
   ngOnInit(){
-    this.chatService.getResponse().subscribe(data =>
+    this.chatService.currentSpeech.subscribe(data =>
       {
-        this.response=data.content;
-        if(this.response=="create")
+        this.response=data;
+    if(this.response=="create")
     {
       this.router.navigateByUrl('/create-repo');
     }
@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
     else if(this.response=="allRepo")
     {
       this.router.navigateByUrl('/get-repo');
+    }
+    else if(this.response=="favourite")
+    {
+      this.router.navigateByUrl('/favourite');
     }
     else
     {

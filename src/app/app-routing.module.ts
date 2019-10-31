@@ -5,13 +5,15 @@ import {DeleteRepoComponent} from './delete-repo/delete-repo.component';
 import {GetRepoComponent} from './get-repo/get-repo.component';
 import {AppComponent} from './app.component';
 import {ChatComponent} from './chat/chat.component';
+import {FavRepoComponent} from './fav-repo/fav-repo.component';
 
 
 const routes: Routes = [
   { path: 'create-repo', component: CreateRepoComponent },
   { path: 'delete-repo',      component: DeleteRepoComponent },
   { path: 'get-repo', component: GetRepoComponent },
-  { path: 'chat', component: ChatComponent }
+  { path: 'chat', component: ChatComponent },
+  { path: 'favourite', component: FavRepoComponent }
 
 ]
 
