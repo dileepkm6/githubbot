@@ -7,6 +7,7 @@ body {
   
   #bodybox {
     margin: auto;
+    margin-top:40px;
     max-width: 550px;
     max-height: auto;
     font: 15px arial, sans-serif;
@@ -19,6 +20,7 @@ body {
     padding-left: 25px;
     box-shadow: 5px 5px 5px grey;
     border-radius: 15px;
+    font: 15px arial, sans-serif;
   }
   
   #chatborder {
@@ -66,9 +68,10 @@ body {
   #success
   {
     text-align: center;
+    width:100px;
   }
 img
 {
-  width: 100px;
-  height:100px;
+  width: 50px;
+  height:50px;
 }

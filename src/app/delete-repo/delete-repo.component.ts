@@ -24,6 +24,7 @@ export class DeleteRepoComponent implements OnInit {
         this.snachBar.open(repoName+" successfully deleted","ok",{duration:2000});
         console.log(data);
       })
+    // this._githubService.deleteRepoFromDataBase(repoId);
       // this._githubService.deleteRepoFromDataBase(repoId);
  }
 }
