@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   dialogFlow: {
-    GithubBot: 'acb2031a6ee3426e97fd8fd1b4d4a15e'
+    GithubBot: 'key'
   }
 };
 
